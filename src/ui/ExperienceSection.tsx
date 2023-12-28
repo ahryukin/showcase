@@ -11,14 +11,16 @@ export const ExperienceSection = () => (
       <h3 className="text-white text-center mb-36 sm:typography-font-3 typography-font-5 !font-bold">
         <span className="text-grayish">02</span> Experience
       </h3>
-      {experienceItems.map((info, index) => (
-        <ExperienceItemWrapper
-          mirror={index % 2 === 1}
-          key={info.title ?? "last"}
-        >
-          <ExperienceItem {...info} />
-        </ExperienceItemWrapper>
-      ))}
+      <div className="flow-root pb-20">
+        {experienceItems.map((info, index) => (
+          <ExperienceItemWrapper
+            mirror={index % 2 === 1}
+            key={info.title ?? "last"}
+          >
+            <ExperienceItem {...info} />
+          </ExperienceItemWrapper>
+        ))}
+      </div>
     </div>
   </section>
 )

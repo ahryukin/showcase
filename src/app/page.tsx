@@ -8,7 +8,7 @@ import { ExperienceSection } from "@/ui/ExperienceSection"
 import { ContactForm } from "@/ui/ContactForm"
 import { SocialMedia } from "@/ui/SocialMediaButtons"
 
-export default async function Main() {
+export default function Main() {
   return (
     <div>
       <PersonSection>

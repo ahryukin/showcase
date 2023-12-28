@@ -2,7 +2,7 @@ import { skills } from "@/data/skills"
 import { Skills } from "./Skills"
 
 export const SkillsSection = () => (
-  <section className="lg:min-h-[calc(100vh+370px)] min-h-screen bg-coffee bg-fixed bg-blend-hard-light bg-underlay">
+  <section className="lg:min-h-[calc(100vh+370px)] min-h-screen bg-coffee bg-fixed bg-blend-soft-light bg-underlay/[.6]">
     <div className="flex flex-col justify-center items-center lg:pt-[370px] pt-24 ">
       <h3
         id="Skills"
