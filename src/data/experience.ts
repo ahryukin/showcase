@@ -24,7 +24,7 @@ export const experienceItems: Array<ExperienceItem> = [
       Worked well independently and within a team setting`,
   },
   {
-    period: "Jul 2020 - Oct 2023",
+    period: "Jul 2020 - Oct 2020",
     title: "Intern",
     orgName: "Hello World! Technologies",
     description:
