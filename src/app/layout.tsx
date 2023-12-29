@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Aleksandr Khriukin",
   description:
     "Experienced Web Developer adept in all stages of advanced development. Knowledgeable in user interface, testing, and debugging processes. Able to effectively self-manage during independent projects, as well as collaborate in a team setting.",
+  openGraph: {
+    images: [{ url: "/og.jpg" }, { url: "/og.png" }, { url: "/og1.jpg" }],
+  },
 }
 
 export default function RootLayout({
