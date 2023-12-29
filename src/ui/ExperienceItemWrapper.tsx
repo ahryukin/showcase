@@ -15,7 +15,7 @@ export const ExperienceItemWrapper: FC<ExperienceItemWrapperProps> = ({
   const mirror = index % 2 === 1
   const wrapperMixin = mirror
     ? "float-left flex-row-reverse"
-    : "float-left flex-row-reverse sm:float-right sm:flex-row sm:mr-[5px]"
+    : "float-left flex-row-reverse sm:float-right sm:flex-row sm:mr-[6px]"
 
   const lineMixin = mirror
     ? "border-r-[6px]"
@@ -25,7 +25,7 @@ export const ExperienceItemWrapper: FC<ExperienceItemWrapperProps> = ({
     ? "text-right md:pr-24 pr-7"
     : "text-right md:pr-24 pr-7 sm:text-left md:pl-24 sm:pl-10"
 
-  const pointMixin = mirror ? "right-[-7px]" : "sm:left-[-7px] right-[-7px]"
+  const pointMixin = mirror ? "right-[-5px]" : "sm:left-[-5px] right-[-5px]"
 
   const delay = `${index * 700}ms`
   return (
@@ -47,7 +47,7 @@ export const ExperienceItemWrapper: FC<ExperienceItemWrapperProps> = ({
       >
         <div
           className={clsx(
-            "w-[20px] h-[20px] bg-greenish rounded-[50%] pl-2 absolute transition-transform duration-[500ms]",
+            "w-[16px] h-[16px] bg-greenish rounded-[50%] pl-2 absolute transition-transform duration-[500ms]",
             pointMixin
           )}
           style={{
