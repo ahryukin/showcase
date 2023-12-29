@@ -35,7 +35,7 @@ export default function Main() {
           <SocialMedia privacy />
         </InterSection>
 
-        <section className="min-h-half-screen bg-pencil bg-right-bottom bg-cover bg-fixed relative"></section>
+        <section className="min-h-half-screen bg-pencil bg-right-bottom bg-cover bg-fixed relative scale-100 md:transform-none"></section>
 
         <footer className="h-28 bg-darkish"></footer>
       </main>
