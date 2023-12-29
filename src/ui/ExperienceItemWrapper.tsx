@@ -2,32 +2,61 @@ import { FC, ReactNode } from "react"
 import clsx from "clsx"
 
 export interface ExperienceItemWrapperProps {
-  mirror?: boolean
+  index?: number
+  inView?: boolean
   children?: ReactNode | ReactNode[]
 }
 
 export const ExperienceItemWrapper: FC<ExperienceItemWrapperProps> = ({
   children,
-  mirror = false,
+  inView = true,
+  index = 0,
 }) => {
+  const mirror = index % 2 === 1
+  const wrapperMixin = mirror
+    ? "float-left flex-row-reverse"
+    : "float-left flex-row-reverse sm:float-right sm:flex-row sm:mr-[5px]"
+
+  const lineMixin = mirror
+    ? "border-r-[6px]"
+    : "border-r-[6px] sm:border-l-[6px] sm:border-r-0"
+
   const blockMixin = mirror
-    ? "float-left text-right md:pr-24 pr-7 border-r-4 ml-[2px]"
-    : "float-left text-right md:pr-24 pr-7 border-r-4 ml-[2px] sm:float-right sm:text-left md:pl-24 sm:pl-10 sm:border-l-4 sm:border-r-0 sm:mr-[2px]"
-  const pointMixin = mirror ? "right-[-10px]" : "sm:left-[-10px] right-[-10px]"
+    ? "text-right md:pr-24 pr-7"
+    : "text-right md:pr-24 pr-7 sm:text-left md:pl-24 sm:pl-10"
+
+  const pointMixin = mirror ? "right-[-7px]" : "sm:left-[-7px] right-[-7px]"
+
+  const delay = `${index * 700}ms`
   return (
     <div
       className={clsx(
-        "border-greenish w-[97%] sm:w-1/2 clear-both relative pl-2",
-        blockMixin
+        "w-[97%] sm:w-1/2 clear-both relative inline-flex",
+        wrapperMixin
       )}
     >
       <div
         className={clsx(
-          "w-[16px] h-[16px] bg-greenish rounded-[50%] absolute",
-          pointMixin
+          "border-greenish transition-[max-height] duration-[2500ms]",
+          lineMixin
         )}
-      />
-      {children}
+        style={{
+          maxHeight: inView ? "999px" : "0px",
+          transitionDelay: delay,
+        }}
+      >
+        <div
+          className={clsx(
+            "w-[20px] h-[20px] bg-greenish rounded-[50%] pl-2 absolute transition-transform duration-[500ms]",
+            pointMixin
+          )}
+          style={{
+            transform: inView ? "scale(1)" : "scale(0)",
+            transitionDelay: delay,
+          }}
+        />
+      </div>
+      <div className={clsx("", blockMixin)}>{children}</div>
     </div>
   )
 }

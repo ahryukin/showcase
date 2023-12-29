@@ -8,8 +8,8 @@ export interface SkillsProps {
 
 export const Skills: FC<SkillsProps> = ({ skills }) => (
   <div className="flex flex-col gap-12">
-    {skills.map(({ text, value }) => (
-      <Progress text={text} value={value} key={text} />
+    {skills.map(({ text, value }, index) => (
+      <Progress text={text} value={value} key={text} index={index} />
     ))}
   </div>
 )
